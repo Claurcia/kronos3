@@ -54,14 +54,15 @@ $(function() {
 
 	var onlongtouch; 
 	var timer, lockTimer;
-	var touchduration = 800; //length of time we want the user to touch before we do something
+	var touchduration = 5; //length of time we want the user to touch before we do something
 
 
-	function touchstart() {
+	function touchstart(btn1) {
     timer = setTimeout(onlongtouch, touchduration); 
 	}
+	console.log(touchstart)
 
-	function touchend() {
+	function touchend(btn1) {
 
     //stops short touches from firing the event
     if (timer)
