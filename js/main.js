@@ -50,26 +50,27 @@ $(function() {
 	  if (timeDiff>2000){
 	  	$("#myModal").modal()
 	  	};
-
-
-	var startTime2, endTime2;
-	btnClick.ontouchstart = function() {
-	  startTime2 = new Date();
-	  console.log("Estoy touch, haz lo que necesites...");
-	};
-	btnClick.ontouchleave = function() {
-	  endTime2 = new Date();
-	  var timeDiff2 = endTime2 - startTime2; //en ms
-	  console.log("Se hizo touch:\n" + startTime2);
-	  console.log("Se levantó el touch:\n" + endTime2);
-	  console.log("Tiempo transcurrido:\n" + timeDiff2 + " ms");
-	  if (timeDiff2>2000){
-	  	$("#myModal").modal()
-	  	};
-
 	};
 
+	var onlongtouch; 
+	var timer, lockTimer;
+	var touchduration = 800; //length of time we want the user to touch before we do something
 
-};
+
+	function touchstart() {
+    timer = setTimeout(onlongtouch, touchduration); 
+	}
+
+	function touchend() {
+
+    //stops short touches from firing the event
+    if (timer)
+        clearTimeout(timer); // clearTimeout, not cleartimeout..
+	}
+
+	onlongtouch = function() { 
+		$("#myModal").modal()
+	};
+
 	
 });
