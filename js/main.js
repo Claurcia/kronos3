@@ -47,7 +47,7 @@ $(function() {
 	  // console.log("Se hizo clic:\n" + startTime);
 	  // console.log("Se levantó el clic:\n" + endTime);
 	  // console.log("Tiempo transcurrido:\n" + timeDiff + " ms");
-	  if (timeDiff>1400){
+	  if (timeDiff>900){
 	  	$("#myModal").modal()
 	  	};
 	};
