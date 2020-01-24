@@ -29,7 +29,7 @@ $(function() {
 
 	var btnClick = document.getElementById('btn1');
 	var startTime, endTime;
-	console.log(btnClick);
+	// console.log(btnClick);
 	// btnClick.onclick = function() {
 	// 	console.log("Estoy presionado");
 	// 	};
@@ -37,41 +37,26 @@ $(function() {
 	/*Cuando se haga clic*/
 	btnClick.onmousedown = function() {
 	  startTime = new Date();
-	  console.log("Estoy presionado, haz lo que necesites...");
+	  // console.log("Estoy presionado, haz lo que necesites...");
 	};
 
 	/*Cuando se deje de hacer clic*/
 	btnClick.onmouseup = function() {
 	  endTime = new Date();
 	  var timeDiff = endTime - startTime; //en ms
-	  console.log("Se hizo clic:\n" + startTime);
-	  console.log("Se levantó el clic:\n" + endTime);
-	  console.log("Tiempo transcurrido:\n" + timeDiff + " ms");
-	  if (timeDiff>2000){
+	  // console.log("Se hizo clic:\n" + startTime);
+	  // console.log("Se levantó el clic:\n" + endTime);
+	  // console.log("Tiempo transcurrido:\n" + timeDiff + " ms");
+	  if (timeDiff>1400){
 	  	$("#myModal").modal()
 	  	};
 	};
 
-	var onlongtouch; 
-	var timer, lockTimer;
-	var touchduration = 5; //length of time we want the user to touch before we do something
 
-
-	function touchstart(btn1) {
-    timer = setTimeout(onlongtouch, touchduration); 
-	}
-	console.log(touchstart)
-
-	function touchend(btn1) {
-
-    //stops short touches from firing the event
-    if (timer)
-        clearTimeout(timer); // clearTimeout, not cleartimeout..
-	}
-
-	onlongtouch = function() { 
+	btnClick.addEventListener('long-press', function(e) {
 		$("#myModal").modal()
-	};
+	});
+
 
 	
 });

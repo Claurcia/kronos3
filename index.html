@@ -73,20 +73,20 @@
 				</div>
 				<div class="row pt-5">
 					<div class="col-4 p-0 d-flex justify-content-center">
-						<div class="pink-box" id="btn1">
+						<div class="pink-box" id="btn1" data-long-press-delay="1200">
 							<div class="position-absolute mas">
 								<div class="signomas">
 									<span class="text-white signo"> <strong>+</strong></span>
 								</div>
 							</div>
 							<div class="pt-0 pl-2">
-								<span class="first nuevo"><strong>XS</strong></span>
+								<span class="first nuevo no-seleccionable"><strong>XS</strong></span>
 							</div>
 							<div class="text-center caja-icono">
-								<i class="fas fa-laptop-code nuevo" id="one"></i>
+								<i class="fas fa-laptop-code nuevo no-seleccionable" id="one" ></i>
 							</div>
 							<div class="text-center">
-								<span class="mediano nuevo">Maquetación</span>
+								<span class="mediano nuevo no-seleccionable">Maquetación</span>
 							</div>
 							<div class="position-absolute menos">
 								<div class="signomenos">
@@ -335,27 +335,28 @@
 						</div>
 					</div>
 				</div>
-			</div>
-
-			<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+				<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   				<div class="modal-dialog d-flex justify-content-center align-items-center" style="height: 100vh">
     				<div class="modal-content d-flex justify-content-center" style="width:90%;border-radius:8px">
 	        			<button type="button" class="close d-flex justify-content-end mr-2 mb-3"   data-dismiss="modal" aria-label="Close"><span aria-hidden="true" style="font-size:6vh;color:#0B4199;">×</span>
 	        			</button>
 	        			<div class="modal-body text-center">
-	        				<h5><strong>retar por:</strong></h5>
-	     					<h1><strong>3,000</strong></h1>
-	        				<h6>millas</h6>
-					        <div class="col-4-reverse ml-2 mb-4">
-					          	<button type="button" class="btn btn-default btn-circle btn-lg" style="color:white"> <i class="fas fa-info"></i></button>
-					      	</div>
-					      	<button type="button" class="btn1  btn-lg btn-block">Si, quiero retarlo</button>
+	        				<h5><strong>¿Estás seguro que deseas terminar el entregable?</strong></h5>
+	     					
+					        
+					      	<button id="si" type="button" class="btn1  mb-5 mt-4 ">Si</button>
+					      	<button id="no" type="button" class="btn1  mb-5 ">No</button>
 					    </div>
   					</div>
 				</div>
 			</div>
+			</div>
+
+			
 			<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 			<script src="js/main.js"></script>
+			<script src="js/long-press.min.js"></script>
+
 			<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 			<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>	
 		</body>
